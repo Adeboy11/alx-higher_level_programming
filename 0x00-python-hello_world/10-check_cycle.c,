@@ -1,0 +1,26 @@
+#include "lists.h"
+
+/**
+ * check_cycle - check if a list has a cycle
+ * @list: list to check
+ *
+ * Return: 1 if it has a cycle, 0 if it doesn't
+ */
+int check_cycle(listint_t *list)
+{
+	listint_t *nocycle = list;
+	listint_t *hascycle = list;
+
+	if (!list)
+		return (0);
+
+	while (nocycle && hascycle && hascycle->next)
+	{
+		nocycle = nocycle->next;
+		hascycle = hascycle->next->next;
+		if (nocycle == hascycle)
+			return (1);
+	}
+
+	return (0);
+}
