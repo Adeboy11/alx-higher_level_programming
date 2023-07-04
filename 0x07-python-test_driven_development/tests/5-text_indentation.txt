@@ -1,0 +1,86 @@
+
+================================
+Usage for 5-text_indentation.py
+================================
+
+This defines a text-indentation function ``text_indentation(text)``.
+
+===============================================
+Texts printed with two new lines after each of the characters ``.``, ``?``,
+and ``:``.
+    >>> text_indentation("Good?")
+    Good?
+    <SPACE>
+
+===============================================
+No spaces are printed at the beginning.
+    >>> text_indentation("   Hello Bola.")
+    Hello Bola.
+    <SPACE>
+===============================================
+    >>> text_indentation("          ")
+
+
+===============================================
+Similarly, no spaces are printed at the end the line.
+    >>> text_indentation("Hi.   ")
+    Hi.
+    <SPACE>
+
+===============================================
+
+    >>> text_indentation("    Where is he?    What can i do.   ")
+    Where is he?
+    <SPACE>
+    What can i do.
+    <SPACE>
+
+===============================================
+New lines are only printed for the characters ``.``, ``?``, and ``:`` -
+    >>> text_indentation("Hello honey, how are you doing.")
+    Hello honey, how are you doing.
+
+===============================================
+New lines within a string are printed as normal.
+    >>> text_indentation("OK now, let's go :\na new line.")
+    OK now, let's go :
+    <SPACE>
+    <SPACE>
+    a new line.
+    <SPACE>
+
+===============================================
+
+    >>> text_indentation("\n\n\n We just a new line three new lines.")
+    <SPACE>
+    <SPACE>
+    <SPACE>
+    We just printed three new lines.
+    <SPACE>
+
+===============================================
+    >>> text_indentation("What \n is this.")
+    What 
+    is this.
+    <SPACE>
+
+Invalid Texts
+============
+
+===============================================
+``texts`` must be a string. Otherwise.
+    >>> text_indentation(1)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+===============================================
+
+    >>> text_indentation({'three':3, 'ade':4})
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+===============================================
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
