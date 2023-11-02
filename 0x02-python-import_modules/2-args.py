@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
+    """Returns number of argument"""
     import sys
     i = len(sys.argv) - 1
 
@@ -9,7 +10,6 @@ if __name__ == "__main__":
         print("{} argument:".format(i))
     else:
         print("{} arguments:".format(i))
-
     if i >= 1:
         i = 0
         for arg in sys.argv:
