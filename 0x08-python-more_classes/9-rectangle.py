@@ -2,11 +2,10 @@
 """ A class that defines a rectangle
 """
 
-
 class Rectangle:
     """ class rectangle"""
     number_of_instances = 0
-    print_symbol = "#"
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """ Instantiate width and height"""
@@ -86,4 +85,3 @@ class Rectangle:
         """
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
-
