@@ -2,7 +2,6 @@
 """_summary_    """
 
 from models.base import Base
-#from base import Base
 
 class Rectangle(Base):
     """_summary_
@@ -20,11 +19,11 @@ class Rectangle(Base):
             y (int, optional): _description_. Defaults to 0.
             id (_type_, optional): _description_. Defaults to None.
         """
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     @property
     def width(self):
@@ -39,7 +38,7 @@ class Rectangle(Base):
         Args:
             value (int): width of rectangle
         """
-        if type(value) != int:
+        if isinstance(value, int):
             raise TypeError("width must be an int")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -58,7 +57,7 @@ class Rectangle(Base):
         Args:
             value (int): height of rectangle
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("height must be int")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -77,7 +76,7 @@ class Rectangle(Base):
         Args:
             value (int): the horizontal position
         """
-        if type(x) != int:
+        if not isinstance(value, int):
             raise TypeError("x must be an int")
         if x < 0:
             raise ValueError("x must be >= 0")
@@ -96,7 +95,7 @@ class Rectangle(Base):
         Args:
             value (int): the vertical position
         """
-        if type(y) != int:
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if y < 0:
             raise ValueError("y must be >= 0")
