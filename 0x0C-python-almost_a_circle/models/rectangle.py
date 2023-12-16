@@ -9,7 +9,7 @@ class Rectangle(Base):
     Args:
         Base (_type_): _description_
     """
-    def __init__(self, width, height, x=0, y=0, id=None):
+    def __init__(self, width, height, x = 0, y = 0, id=None):
         """_summary_
 
         Args:
@@ -38,7 +38,7 @@ class Rectangle(Base):
         Args:
             value (int): width of rectangle
         """
-        if isinstance(value, int):
+        if not isinstance(value, int):
             raise TypeError("width must be an int")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -78,9 +78,9 @@ class Rectangle(Base):
         """
         if not isinstance(value, int):
             raise TypeError("x must be an int")
-        if x < 0:
+        if value < 0:
             raise ValueError("x must be >= 0")
-        self.x = value
+        self.__x = value
 
     @property
     def y(self):
@@ -97,7 +97,7 @@ class Rectangle(Base):
         """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
-        if y < 0:
+        if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
         
