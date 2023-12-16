@@ -42,7 +42,7 @@ class Rectangle(Base):
             raise TypeError("width must be an int")
         if value <= 0:
             raise ValueError("width must be > 0")
-            self.__width = value
+        self.__width = value
             
     @property
     def height(self):
@@ -104,7 +104,8 @@ class Rectangle(Base):
     def area(self):
         """_summary_
         """
-        return self.height * self.width
+        area = (self.height * self.width)
+        return area
     
     def display(self):
         """_summary_
