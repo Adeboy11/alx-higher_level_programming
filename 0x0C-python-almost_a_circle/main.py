@@ -1,14 +1,16 @@
 #!/usr/bin/python3
 """ 0-main """
-from models.rectangle import Rectangle
+from models.square import Square
 
 if __name__ == "__main__":
 
-    r1 = Rectangle(3, 2)
-    print(r1.area())
+    s1 = Square(5)
+    print(s1)
+    print(s1.size)
+    s1.size = 10
+    print(s1)
 
-    r2 = Rectangle(2, 10)
-    print(r2.area())
-
-    r3 = Rectangle(8, 7, 0, 0, 12)
-    print(r3.area())
+    try:
+        s1.size = "9"
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
