@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """_summary_    """
 
-from rectangle import Rectangle
+from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """_summary_
